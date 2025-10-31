@@ -5,8 +5,6 @@ import fonts
 questions : list[Question] = [question1, question2]
 question_amount : int = len(questions)
 
-# Fonts
-
 # Turtles
 question_writer = turtle.Turtle()
 answer1_writer = turtle.Turtle()
@@ -14,9 +12,6 @@ answer2_writer = turtle.Turtle()
 answer3_writer = turtle.Turtle()
 answer4_writer = turtle.Turtle()
 gameover_writer = turtle.Turtle()
-
-
-
 
 def display_question(question_number : int):
   pass
