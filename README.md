@@ -1,2 +1,3 @@
 # the-mostly-possible-quiz
-CS Principles Group Project
+My CS Principles Group Project.
+Meant to be a clone of The Impossible Quiz.
