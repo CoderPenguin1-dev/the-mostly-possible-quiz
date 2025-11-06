@@ -9,6 +9,8 @@ wn = turtle.Screen()
 
 # Turtles
 question_writer = turtle.Turtle()
+question_writer.goto(0,0)
+question_writer=fonts.question
 answer1_writer = turtle.Turtle()
 answer2_writer = turtle.Turtle()
 answer3_writer = turtle.Turtle()
