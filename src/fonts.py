@@ -1,0 +1,1 @@
+gameover = ("Arial", 50, "bold")

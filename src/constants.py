@@ -1,0 +1,1 @@
+WIPE_SPEED : int = 50

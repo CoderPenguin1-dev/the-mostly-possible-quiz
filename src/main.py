@@ -2,6 +2,7 @@ import turtle
 from question import Question
 from questions import *
 import fonts
+import constants
 questions : list[Question] = [question1, question2]
 question_amount : int = len(questions)
 turtle.setup(800, 800)
@@ -15,9 +16,14 @@ answer3_writer = turtle.Turtle()
 answer4_writer = turtle.Turtle()
 
 gameover_writer = turtle.Turtle()
+gameover_writer.penup()
+gameover_writer.hideturtle()
+gameover_writer.pencolor("red")
+gameover_writer.goto(-180, 0)
+
 wipe_drawer = turtle.Turtle()
 wipe_drawer.speed(0)
-wipe_drawer.pensize(30)
+wipe_drawer.pensize(constants.WIPE_SPEED)
 wipe_drawer.pencolor("red")
 
 
@@ -25,7 +31,8 @@ def display_question(question_number : int):
   pass
 
 def display_game_over():
-   pass
+   display_wipe()
+   gameover_writer.write("Game Over!", font=fonts.gameover)
 
 def display_wipe():
   window_width = turtle.window_width()
@@ -40,14 +47,13 @@ def display_wipe():
   while y >= -window_height + 10: # The +10 is there to add a delay from when the wipe is cleared.
      wipe_drawer.pendown()
      wipe_drawer.goto(-window_width, y)
-     y -= 30
+     y -= constants.WIPE_SPEED
      wipe_drawer.penup()
      wipe_drawer.goto(window_width, y)
      
   wipe_drawer.clear()
 
 def main():
-  display_wipe()
   wn.mainloop()
 
 if __name__ == "__main__":
