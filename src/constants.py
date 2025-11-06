@@ -1,1 +1,2 @@
 WIPE_SPEED : int = 50
+WIPE_CLEAR_DELAY : int = 10

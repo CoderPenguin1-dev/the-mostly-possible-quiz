@@ -44,7 +44,7 @@ def display_wipe():
   wipe_drawer.goto(-window_width, window_height)
   
   y = window_height
-  while y >= -window_height + 10: # The +10 is there to add a delay from when the wipe is cleared.
+  while y >= -window_height + constants.WIPE_CLEAR_DELAY: # The +10 is there to add a delay from when the wipe is cleared.
      wipe_drawer.pendown()
      wipe_drawer.goto(-window_width, y)
      y -= constants.WIPE_SPEED
