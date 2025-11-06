@@ -3,7 +3,7 @@ from question import Question
 from questions import *
 import fonts
 import constants
-questions : list[Question] = [question1, question2]
+questions : list[Question] = [question1, question2, question3, question4, question5, question6]
 question_amount : int = len(questions)
 turtle.setup(800, 800)
 wn = turtle.Screen()
