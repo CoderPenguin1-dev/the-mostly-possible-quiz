@@ -1,2 +1,3 @@
 WIPE_SPEED : int = 50
 WIPE_CLEAR_DELAY : int = 10
+GAMEOVER_WIPE_COLOR : str = "red"

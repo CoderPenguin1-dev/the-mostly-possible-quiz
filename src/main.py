@@ -35,7 +35,7 @@ def display_question(question_number : int):
   pass
 
 def display_game_over():
-   display_wipe("red")
+   display_wipe(constants.GAMEOVER_WIPE_COLOR)
    gameover_writer.write("Game Over!", font=fonts.gameover)
 
 def display_wipe(color : str):
