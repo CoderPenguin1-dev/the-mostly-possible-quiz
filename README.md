@@ -1,4 +1,4 @@
-# the-mostly-possible-quiz
+# The Mostly Possible Quiz!
 My CS Principles Group Project.
 
 Meant to be a clone of The Impossible Quiz.
