@@ -55,7 +55,7 @@ def display_question(question_number : int):
   answer1_writer.write("A) "+ questions[question_number].answers[0],font=fonts.answers)
   answer2_writer.write("B) "+ questions[question_number].answers[1],font=fonts.answers)
   answer3_writer.write("C) "+ questions[question_number].answers[2],font=fonts.answers)
-  answer3_writer.write("D) "+ questions[question_number].answers[3],font=fonts.answers)
+  answer4_writer.write("D) "+ questions[question_number].answers[3],font=fonts.answers)
 
 def display_game_over():
    display_wipe(constants.GAMEOVER_WIPE_COLOR)
