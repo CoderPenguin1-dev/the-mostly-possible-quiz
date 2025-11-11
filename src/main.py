@@ -1,5 +1,4 @@
 import turtle  
-from question import Question
 from questions import *
 import display
 from globals import *
