@@ -48,7 +48,15 @@ wipe_drawer.hideturtle()
 wipe_drawer.speed(0)
 wipe_drawer.pensize(constants.WIPE_SPEED)
 wipe_drawer.pencolor("red")
+#def quizer_drawer():
 
+quizer_drawer = turtle.Turtle()
+quizer_drawer.penup()
+quizer_drawer.goto(-390,330)
+quizer_drawer.write("The Mostly Possible Quiz")
+for i in range(6):
+  quizer_drawer.forward(150)
+  quizer_drawer.write("The Mostly Possible Quiz")
 
 
 turtle.tracer(1)
