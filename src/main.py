@@ -8,6 +8,10 @@ questions : list[Question] = [question1, question2, question3, question4, questi
 question_amount : int = len(questions)
 turtle.setup(800, 800)
 wn = turtle.Screen()
+# Done to increase rendering speed temporarily.
+turtle.tracer(0)
+turtle.update()
+
 game_over : bool = False
 current_question : int = 0
 
@@ -15,27 +19,27 @@ current_question : int = 0
 question_writer = turtle.Turtle()
 question_writer.hideturtle()
 question_writer.penup()
-question_writer.goto(-100,100)
+question_writer.goto(constants.QUESTION_X_POS, constants.QUESTION_Y_POS)
 
 answer1_writer = turtle.Turtle()
 answer1_writer.hideturtle()
 answer1_writer.penup()
-answer1_writer.goto(-90,50)
+answer1_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET)
 
 answer2_writer = turtle.Turtle()
 answer2_writer.hideturtle()
 answer2_writer.penup()
-answer2_writer.goto(-90,0)
+answer2_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET * 2)
 
 answer3_writer = turtle.Turtle()
 answer3_writer.hideturtle()
 answer3_writer.penup()
-answer3_writer.goto(-90,-50)
+answer3_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET * 3)
 
 answer4_writer = turtle.Turtle()
 answer4_writer.hideturtle()
 answer4_writer.penup()
-answer4_writer.goto(-90,-100)
+answer4_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET * 4)
 
 gameover_writer = turtle.Turtle()
 gameover_writer.penup()
@@ -49,6 +53,7 @@ wipe_drawer.speed(0)
 wipe_drawer.pensize(constants.WIPE_SPEED)
 wipe_drawer.pencolor("red")
 
+turtle.tracer(1)
 
 def display_question(question_number : int):
   question_writer.write(questions[question_number].question, font=fonts.question)
@@ -90,7 +95,8 @@ def draw_game():
 
 	if (game_over):
 		display_game_over()
-	else: display_question(current_question)
+	else: 
+		display_question(current_question)
 
 def check_answer(answer_index : int):
 	global current_question
