@@ -13,10 +13,29 @@ current_question : int = 0
 
 # Turtles
 question_writer = turtle.Turtle()
+question_writer.hideturtle()
+question_writer.penup()
+question_writer.goto(-100,100)
+
 answer1_writer = turtle.Turtle()
+answer1_writer.hideturtle()
+answer1_writer.penup()
+answer1_writer.goto(-90,50)
+
 answer2_writer = turtle.Turtle()
+answer2_writer.hideturtle()
+answer2_writer.penup()
+answer2_writer.goto(-90,0)
+
 answer3_writer = turtle.Turtle()
+answer3_writer.hideturtle()
+answer3_writer.penup()
+answer3_writer.goto(-90,-50)
+
 answer4_writer = turtle.Turtle()
+answer4_writer.hideturtle()
+answer4_writer.penup()
+answer4_writer.goto(-90,-100)
 
 gameover_writer = turtle.Turtle()
 gameover_writer.penup()
@@ -32,7 +51,11 @@ wipe_drawer.pencolor("red")
 
 
 def display_question(question_number : int):
-  pass
+  question_writer.write(questions[question_number].question, font=fonts.question)
+  answer1_writer.write("A) "+ questions[question_number].answers[0],font=fonts.answers)
+  answer2_writer.write("B) "+ questions[question_number].answers[1],font=fonts.answers)
+  answer3_writer.write("C) "+ questions[question_number].answers[2],font=fonts.answers)
+  answer3_writer.write("D) "+ questions[question_number].answers[3],font=fonts.answers)
 
 def display_game_over():
    display_wipe(constants.GAMEOVER_WIPE_COLOR)
