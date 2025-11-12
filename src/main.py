@@ -15,6 +15,7 @@ def draw_game():
         display.wipe_shown = False
     else: 
         display.game_over()
+    display.scroll_banner()
 
 def check_answer(answer_index : int):
    global current_question

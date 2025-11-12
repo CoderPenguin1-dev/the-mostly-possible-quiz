@@ -5,3 +5,6 @@ GAMEOVER_WIPE_COLOR : str = "red"
 QUESTION_X_POS : int = -350
 QUESTION_Y_POS : int = 100
 ANSWER_Y_OFFSET : int = 50
+
+BANNER_Y_POS : int = 350
+BANNER_X_BOUND : int = 800

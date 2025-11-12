@@ -5,14 +5,17 @@ import fonts
 from time import sleep
 
 turtle.tracer(0)
-wipe_shown : bool = False
 
-# Turtles
+'''
+    Turtles
+'''
+# Question Text
 question_writer = turtle.Turtle()
 question_writer.hideturtle()
 question_writer.penup()
 question_writer.goto(constants.QUESTION_X_POS, constants.QUESTION_Y_POS)
 
+# Answer Text
 answer1_writer = turtle.Turtle()
 answer1_writer.hideturtle()
 answer1_writer.penup()
@@ -33,17 +36,29 @@ answer4_writer.hideturtle()
 answer4_writer.penup()
 answer4_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET * 4)
 
+# Game Over Text
 game_over_writer = turtle.Turtle()
 game_over_writer.penup()
 game_over_writer.hideturtle()
 game_over_writer.pencolor("red")
 game_over_writer.goto(-280, -20)
 
+# Wipe Screen
+wipe_shown : bool = False
 wipe_drawer = turtle.Turtle()
 wipe_drawer.hideturtle()
 wipe_drawer.speed(0)
 wipe_drawer.pensize(constants.WIPE_SPEED)
 wipe_drawer.pencolor("red")
+
+# Scrolling Banner
+banner_position : float = -constants.BANNER_X_BOUND
+banner_writer = turtle.Turtle()
+banner_writer.hideturtle()
+banner_writer.speed(0)
+banner_writer.penup()
+banner_writer.pencolor("green")
+banner_writer.goto(banner_position, constants.BANNER_Y_POS)
 
 def question(question_number : int):
   question_writer.write(questions[question_number].question, font=fonts.question)
@@ -56,11 +71,28 @@ def game_over():
    wipe(constants.GAMEOVER_WIPE_COLOR)
    game_over_writer.write("     Game Over!\n\nPress A to restart.\n  Press Q to quit.", font=fonts.gameover)
 
+def scroll_banner():
+    global banner_position
+    banner_writer.clear()
+
+    # Move the banner right. Check to see if it needs to be looped over.
+    banner_position += 10
+    if (banner_position == constants.BANNER_X_BOUND):
+        banner_position = -constants.BANNER_X_BOUND
+
+    banner_writer.goto(banner_position, constants.BANNER_Y_POS)
+    banner_writer.write("The Mostly Possible Quiz", font=fonts.banner)
+    sleep(0.05)
+
 def wipe(color : str):
     global wipe_shown
     if (not wipe_shown):
+        # Hide the banner. Othrwise it'll be obvious it stopped moving.
+        banner_writer.clear()
+
         wipe_drawer.pencolor(color)
         window_width = turtle.window_width()
+
         # -350 to compensate for the window being larger than actually being shown.
         window_height = turtle.window_height() - 350
 
