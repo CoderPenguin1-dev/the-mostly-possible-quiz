@@ -5,13 +5,16 @@ from globals import *
 
 turtle.setup(800, 800)
 wn = turtle.Screen()
+quit_invoked : bool = False
+
+current_question : int = 0
 
 def draw_game():
-	display.clear()
-	if (game_running):
-		display.question(current_question)
-	else: 
-		display.game_over()
+    if (game_running):
+        display.question(current_question)
+        display.wipe_shown = False
+    else: 
+        display.game_over()
 
 def check_answer(answer_index : int):
    global current_question
@@ -26,7 +29,6 @@ def check_answer(answer_index : int):
    else:
       current_question = 0
       game_running = True
-   draw_game()
 
 def answer1_selected():
    check_answer(0)
@@ -40,14 +42,22 @@ def answer3_selected():
 def answer4_selected():
    check_answer(3)
 
+def quit_game():
+   global quit_invoked
+   quit_invoked = True
+
 def main():
-	draw_game()
-	wn.onkeypress(answer1_selected, "a")
-	wn.onkeypress(answer2_selected, "b")
-	wn.onkeypress(answer3_selected, "c")
-	wn.onkeypress(answer4_selected, "d")
-	wn.listen()
-	wn.mainloop()
+    wn.onkeypress(answer1_selected, "a")
+    wn.onkeypress(answer2_selected, "b")
+    wn.onkeypress(answer3_selected, "c")
+    wn.onkeypress(answer4_selected, "d")
+    wn.onkeypress(quit_game, "q")
+    wn.listen()
+
+    while (not quit_invoked):
+       display.clear()
+       draw_game()
+       turtle.update()
 
 if __name__ == "__main__":
     main()

@@ -2,9 +2,10 @@ import turtle
 import constants
 from globals import *
 import fonts
+from time import sleep
 
 turtle.tracer(0)
-turtle.update()
+wipe_shown : bool = False
 
 # Turtles
 question_writer = turtle.Turtle()
@@ -36,15 +37,13 @@ game_over_writer = turtle.Turtle()
 game_over_writer.penup()
 game_over_writer.hideturtle()
 game_over_writer.pencolor("red")
-game_over_writer.goto(-260, -20)
+game_over_writer.goto(-280, -20)
 
 wipe_drawer = turtle.Turtle()
 wipe_drawer.hideturtle()
 wipe_drawer.speed(0)
 wipe_drawer.pensize(constants.WIPE_SPEED)
 wipe_drawer.pencolor("red")
-
-turtle.tracer(1)
 
 def question(question_number : int):
   question_writer.write(questions[question_number].question, font=fonts.question)
@@ -55,27 +54,33 @@ def question(question_number : int):
 
 def game_over():
    wipe(constants.GAMEOVER_WIPE_COLOR)
-   game_over_writer.write("     Game Over!\nPress A to restart.", font=fonts.gameover)
+   game_over_writer.write("     Game Over!\n\nPress A to restart.\n  Press Q to quit.", font=fonts.gameover)
 
 def wipe(color : str):
-  wipe_drawer.pencolor(color)
-  window_width = turtle.window_width()
-  # -350 to compensate for the window being larger than actually being shown.
-  window_height = turtle.window_height() - 350
+    global wipe_shown
+    if (not wipe_shown):
+        wipe_drawer.pencolor(color)
+        window_width = turtle.window_width()
+        # -350 to compensate for the window being larger than actually being shown.
+        window_height = turtle.window_height() - 350
 
-  # Goto inital position.
-  wipe_drawer.penup()
-  wipe_drawer.goto(-window_width, window_height)
-  
-  y = window_height
-  while y >= -window_height + constants.WIPE_CLEAR_DELAY: # The +10 is there to add a delay from when the wipe is cleared.
-     wipe_drawer.pendown()
-     wipe_drawer.goto(-window_width, y)
-     y -= constants.WIPE_SPEED
-     wipe_drawer.penup()
-     wipe_drawer.goto(window_width, y)
-     
-  wipe_drawer.clear()
+        # Goto inital position.
+        wipe_drawer.penup()
+        wipe_drawer.goto(-window_width, window_height)
+
+        y = window_height
+        while y >= -window_height + constants.WIPE_CLEAR_DELAY: # The +10 is there to add a delay from when the wipe is cleared.
+            wipe_drawer.pendown()
+            wipe_drawer.goto(-window_width, y)
+            y -= constants.WIPE_SPEED
+            wipe_drawer.penup()
+            wipe_drawer.goto(window_width, y)
+            sleep(0.03)
+            turtle.update()
+            
+        wipe_drawer.clear()
+        wipe_shown = True
+
 
 def clear():
     question_writer.clear()
