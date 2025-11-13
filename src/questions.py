@@ -21,11 +21,11 @@ question6 = Question("How many holes in a loaf of bread?",
 question7 = Question("How many seconds are there in a year?",
                      ["12.", "48,543,000.", "31,526,000.", "24."], 0)
 
-question8 = Question("Red Bull gives you what?"
+question8 = Question("Red Bull gives you what?",
                      ["Wings.", "Red bulls.", "Heat death of the universe.", "Diabites."], 3)
 
-quesiton9 = Question("La respuesta es sí."
+quesiton9 = Question("La respuesta es sí.",
                      ["Huh?", "I only speak freedom language RAHHH.", "Si.", "No quiero."], 1)
 
-question10 = Question("What is Pluto?"
+question10 = Question("What is Pluto?",
                       ["A planet.", "Yes.", "A dog." , "Not a planet."], 2)
