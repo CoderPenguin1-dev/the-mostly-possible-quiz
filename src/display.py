@@ -47,7 +47,6 @@ game_over_writer.goto(-280, -20)
 wipe_shown : bool = False
 wipe_drawer = turtle.Turtle()
 wipe_drawer.hideturtle()
-wipe_drawer.speed(0)
 wipe_drawer.pensize(constants.WIPE_SPEED)
 wipe_drawer.pencolor("red")
 
@@ -55,17 +54,25 @@ wipe_drawer.pencolor("red")
 banner_position : float = -constants.BANNER_X_BOUND
 banner_writer = turtle.Turtle()
 banner_writer.hideturtle()
-banner_writer.speed(0)
 banner_writer.penup()
 banner_writer.pencolor("green")
 banner_writer.goto(banner_position, constants.BANNER_Y_POS)
 
+# Question Number
+question_number_writer = turtle.Turtle()
+question_number_writer.hideturtle()
+question_number_writer.goto(250, -350)
+question_number_writer.penup()
+
 def question(question_number : int):
   question_writer.write(questions[question_number].question, font=fonts.question)
-  answer1_writer.write("A) "+ questions[question_number].answers[0],font=fonts.answers)
-  answer2_writer.write("B) "+ questions[question_number].answers[1],font=fonts.answers)
-  answer3_writer.write("C) "+ questions[question_number].answers[2],font=fonts.answers)
-  answer4_writer.write("D) "+ questions[question_number].answers[3],font=fonts.answers)
+  answer1_writer.write("A) "+ questions[question_number].answers[0], font=fonts.answers)
+  answer2_writer.write("B) "+ questions[question_number].answers[1], font=fonts.answers)
+  answer3_writer.write("C) "+ questions[question_number].answers[2], font=fonts.answers)
+  answer4_writer.write("D) "+ questions[question_number].answers[3], font=fonts.answers)
+
+def question_number(current_question : int):
+    question_number_writer.write(f"#{current_question:02d}", font=fonts.question_number)
 
 def game_over():
    wipe(constants.GAMEOVER_WIPE_COLOR)
@@ -73,7 +80,6 @@ def game_over():
 
 def scroll_banner():
     global banner_position
-    banner_writer.clear()
 
     # Move the banner right. Check to see if it needs to be looped over.
     banner_position += 10
@@ -83,6 +89,7 @@ def scroll_banner():
     banner_writer.goto(banner_position, constants.BANNER_Y_POS)
     banner_writer.write("The Mostly Possible Quiz", font=fonts.banner)
     sleep(0.05)
+
 
 def wipe(color : str):
     global wipe_shown
@@ -116,8 +123,10 @@ def wipe(color : str):
 
 def clear():
     question_writer.clear()
+    question_number_writer.clear()
     game_over_writer.clear()
     answer1_writer.clear()
     answer2_writer.clear()
     answer3_writer.clear()
     answer4_writer.clear()
+    banner_writer.clear()

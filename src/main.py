@@ -12,6 +12,7 @@ current_question : int = 0
 def draw_game():
     if (game_running):
         display.question(current_question)
+        display.question_number(current_question)
         display.wipe_shown = False
     else: 
         display.game_over()
