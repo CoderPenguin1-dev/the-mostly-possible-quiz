@@ -10,11 +10,19 @@ quit_invoked : bool = False
 current_question : int = 0
 
 def draw_game():
-    if (game_state == GameStates.QUESTIONS):
-        display.question(current_question)
-        display.question_number(current_question)
-        display.wipe_shown = False
-    else: display.game_over()
+    global game_state
+    match game_state:
+      case GameStates.QUESTIONS:
+         display.question(current_question)
+      case GameStates.GAME_OVER_MSG:
+          display.game_over()
+      case GameStates.GAME_OVER:
+          display.wipe("red")
+          game_state = GameStates.GAME_OVER_MSG
+      case GameStates.CORRECT_ANSWER:
+          display.wipe("green")
+          game_state = GameStates.QUESTIONS
+          
     display.scroll_banner()
 
 def check_answer(answer_index : int):
@@ -23,6 +31,7 @@ def check_answer(answer_index : int):
    if (game_state == GameStates.QUESTIONS):
       if (questions[current_question].answer == answer_index):
          current_question += 1
+         game_state = GameStates.CORRECT_ANSWER
       else: game_state = GameStates.GAME_OVER
       
       if (current_question == question_amount):

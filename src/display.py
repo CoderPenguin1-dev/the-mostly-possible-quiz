@@ -44,7 +44,6 @@ game_over_writer.pencolor("red")
 game_over_writer.goto(-280, -20)
 
 # Wipe Screen
-wipe_shown : bool = False
 wipe_drawer = turtle.Turtle()
 wipe_drawer.hideturtle()
 wipe_drawer.pensize(constants.WIPE_SPEED)
@@ -75,7 +74,6 @@ def question_number(current_question : int):
     question_number_writer.write(f"#{current_question:02d}", font=fonts.question_number)
 
 def game_over():
-   wipe(constants.GAMEOVER_WIPE_COLOR)
    game_over_writer.write("     Game Over!\n\nPress A to restart.\n  Press Q to quit.", font=fonts.gameover)
 
 def scroll_banner():
@@ -91,33 +89,30 @@ def scroll_banner():
     sleep(0.05)
 
 def wipe(color : str):
-    global wipe_shown
-    if (not wipe_shown):
-        # Hide the banner. Othrwise it'll be obvious it stopped moving.
-        banner_writer.clear()
+    # Hide the banner. Othrwise it'll be obvious it stopped moving.
+    banner_writer.clear()
 
-        wipe_drawer.pencolor(color)
-        window_width = turtle.window_width()
+    wipe_drawer.pencolor(color)
+    window_width = turtle.window_width()
 
-        # -350 to compensate for the window being larger than actually being shown.
-        window_height = turtle.window_height() - 350
+    # -350 to compensate for the window being larger than actually being shown.
+    window_height = turtle.window_height() - 350
 
-        # Goto inital position.
+    # Goto inital position.
+    wipe_drawer.penup()
+    wipe_drawer.goto(-window_width, window_height)
+
+    y = window_height
+    while y >= -window_height + constants.WIPE_CLEAR_DELAY: # The +10 is there to add a delay from when the wipe is cleared.
+        wipe_drawer.pendown()
+        wipe_drawer.goto(-window_width, y)
+        y -= constants.WIPE_SPEED
         wipe_drawer.penup()
-        wipe_drawer.goto(-window_width, window_height)
-
-        y = window_height
-        while y >= -window_height + constants.WIPE_CLEAR_DELAY: # The +10 is there to add a delay from when the wipe is cleared.
-            wipe_drawer.pendown()
-            wipe_drawer.goto(-window_width, y)
-            y -= constants.WIPE_SPEED
-            wipe_drawer.penup()
-            wipe_drawer.goto(window_width, y)
-            sleep(0.03)
-            turtle.update()
-            
-        wipe_drawer.clear()
-        wipe_shown = True
+        wipe_drawer.goto(window_width, y)
+        sleep(0.03)
+        turtle.update()
+        
+    wipe_drawer.clear()
 
 
 def clear():
