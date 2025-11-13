@@ -61,8 +61,8 @@ banner_writer.goto(banner_position, constants.BANNER_Y_POS)
 # Question Number
 question_number_writer = turtle.Turtle()
 question_number_writer.hideturtle()
-question_number_writer.goto(250, -350)
 question_number_writer.penup()
+question_number_writer.goto(250, -350)
 
 def question(question_number : int):
   question_writer.write(questions[question_number].question, font=fonts.question)

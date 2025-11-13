@@ -14,8 +14,7 @@ def draw_game():
         display.question(current_question)
         display.question_number(current_question)
         display.wipe_shown = False
-    else: 
-        display.game_over()
+    else: display.game_over()
     display.scroll_banner()
 
 def check_answer(answer_index : int):
@@ -49,11 +48,12 @@ def quit_game():
    quit_invoked = True
 
 def main():
-    wn.onkeypress(answer1_selected, "a")
-    wn.onkeypress(answer2_selected, "b")
-    wn.onkeypress(answer3_selected, "c")
-    wn.onkeypress(answer4_selected, "d")
-    wn.onkeypress(quit_game, "q")
+    # Initalize input.
+    wn.onkeypress(answer1_selected, "a") # Option 1.
+    wn.onkeypress(answer2_selected, "b") # Option 2.
+    wn.onkeypress(answer3_selected, "c") # Option 3.
+    wn.onkeypress(answer4_selected, "d") # Option 4.
+    wn.onkeypress(quit_game, "q") # Quit.
     wn.listen()
 
     while (not quit_invoked):
