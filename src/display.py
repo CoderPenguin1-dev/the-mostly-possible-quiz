@@ -20,22 +20,25 @@ answer1_writer = turtle.Turtle()
 answer1_writer.hideturtle()
 answer1_writer.penup()
 answer1_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET)
+answer1_writer.pencolor("red")
 
 answer2_writer = turtle.Turtle()
 answer2_writer.hideturtle()
 answer2_writer.penup()
 answer2_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET * 2)
+answer2_writer.pencolor("blue")
 
 answer3_writer = turtle.Turtle()
 answer3_writer.hideturtle()
 answer3_writer.penup()
 answer3_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET * 3)
+answer3_writer.pencolor("green")
 
 answer4_writer = turtle.Turtle()
 answer4_writer.hideturtle()
 answer4_writer.penup()
 answer4_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET * 4)
-
+answer4_writer.pencolor("orange")
 # Game Over Text
 game_over_writer = turtle.Turtle()
 game_over_writer.penup()
