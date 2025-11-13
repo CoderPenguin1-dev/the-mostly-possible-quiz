@@ -16,4 +16,4 @@ question5 = Question("If you break into a house\nand then into 3 more, where are
                      ["The fourth home.", "Solitary confinement.", "The living room.", "An apartment."], 3)
 
 question6 = Question("How many holes in a loaf of bread?",
-                     ["Too many to count.", "38.", "8.", "Zero... idiot."], 0)
+                     ["Too many to count.", "38.", "8.", "Zero..."], 0)
