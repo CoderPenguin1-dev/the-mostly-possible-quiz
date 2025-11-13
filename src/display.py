@@ -83,7 +83,7 @@ def question(question_number : int):
   answer4_writer.write("D) "+ questions[question_number].answers[3], font=fonts.answers)
 
 def question_number(current_question : int):
-    question_number_writer.write(f"#{current_question:02d}", font=fonts.question_number)
+    question_number_writer.write(f"#{current_question + 1:02d}", font=fonts.question_number)
 
 def game_over():
    game_over_writer.write("     Game Over!\n\nPress A to restart.\n  Press Q to quit.", font=fonts.gameover)

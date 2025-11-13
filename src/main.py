@@ -16,6 +16,7 @@ def draw_game():
           display.main_menu()
       case GameStates.QUESTIONS:
          display.question(current_question)
+         display.question_number(current_question)
       case GameStates.GAME_OVER_MSG:
           display.game_over()
       case GameStates.GAME_OVER:
