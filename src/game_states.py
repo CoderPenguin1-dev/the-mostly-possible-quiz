@@ -5,3 +5,4 @@ class GameStates(Enum):
     GAME_OVER = 2
     QUESTIONS = 3
     CORRECT_ANSWER = 4
+    YOURE_WINNER = 5

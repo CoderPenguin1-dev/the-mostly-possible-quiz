@@ -24,6 +24,9 @@ def draw_game():
       case GameStates.CORRECT_ANSWER:
           display.wipe("green")
           game_state = GameStates.QUESTIONS
+      case GameStates.YOURE_WINNER:
+          display.wipe("yellow")
+          game_state = GameStates.GAME_OVER_MSG
 
     display.scroll_banner()
 
@@ -37,7 +40,7 @@ def check_answer(answer_index : int):
       else: game_state = GameStates.GAME_OVER
       
       if (current_question == question_amount):
-         game_state = GameStates.GAME_OVER
+         game_state = GameStates.YOURE_WINNER
    else:
       current_question = 0
       game_state = GameStates.QUESTIONS
