@@ -12,6 +12,8 @@ current_question : int = 0
 def draw_game():
     global game_state
     match game_state:
+      case GameStates.MAIN_MENU:
+          display.main_menu()
       case GameStates.QUESTIONS:
          display.question(current_question)
       case GameStates.GAME_OVER_MSG:
@@ -22,7 +24,7 @@ def draw_game():
       case GameStates.CORRECT_ANSWER:
           display.wipe("green")
           game_state = GameStates.QUESTIONS
-          
+
     display.scroll_banner()
 
 def check_answer(answer_index : int):

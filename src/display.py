@@ -63,6 +63,15 @@ question_number_writer.hideturtle()
 question_number_writer.penup()
 question_number_writer.goto(250, -350)
 
+# Main Menu
+main_menu_writer = turtle.Turtle()
+main_menu_writer.hideturtle()
+main_menu_writer.penup()
+main_menu_writer.goto(-240, -50)
+
+def main_menu():
+    main_menu_writer.write("Press A to Start\n           or\n     Q to Quit!", font=fonts.gameover)
+
 def question(question_number : int):
   question_writer.write(questions[question_number].question, font=fonts.question)
   answer1_writer.write("A) "+ questions[question_number].answers[0], font=fonts.answers)
@@ -116,6 +125,7 @@ def wipe(color : str):
 
 
 def clear():
+    main_menu_writer.clear()
     question_writer.clear()
     question_number_writer.clear()
     game_over_writer.clear()

@@ -1,6 +1,7 @@
 from enum import Enum
 class GameStates(Enum):
-    GAME_OVER_MSG = 0
-    GAME_OVER = 1
-    QUESTIONS = 2
-    CORRECT_ANSWER = 3
+    MAIN_MENU = 0
+    GAME_OVER_MSG = 1
+    GAME_OVER = 2
+    QUESTIONS = 3
+    CORRECT_ANSWER = 4
