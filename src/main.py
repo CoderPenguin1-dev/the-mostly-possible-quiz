@@ -10,7 +10,7 @@ quit_invoked : bool = False
 current_question : int = 0
 
 def draw_game():
-    if (game_running):
+    if (game_state == GameStates.QUESTIONS):
         display.question(current_question)
         display.question_number(current_question)
         display.wipe_shown = False
@@ -20,17 +20,17 @@ def draw_game():
 
 def check_answer(answer_index : int):
    global current_question
-   global game_running
-   if (game_running):
+   global game_state
+   if (game_state == GameStates.QUESTIONS):
       if (questions[current_question].answer == answer_index):
          current_question += 1
-      else: game_running = False
+      else: game_state = GameStates.GAME_OVER
       
       if (current_question == question_amount):
-         game_running = False
+         game_state = GameStates.GAME_OVER
    else:
       current_question = 0
-      game_running = True
+      game_state = GameStates.QUESTIONS
 
 def answer1_selected():
    check_answer(0)

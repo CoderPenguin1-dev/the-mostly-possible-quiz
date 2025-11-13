@@ -90,7 +90,6 @@ def scroll_banner():
     banner_writer.write("The Mostly Possible Quiz", font=fonts.banner)
     sleep(0.05)
 
-
 def wipe(color : str):
     global wipe_shown
     if (not wipe_shown):
