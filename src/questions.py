@@ -30,7 +30,7 @@ quesiton9 = Question("La respuesta es sí.",
 question10 = Question("What is Pluto?",
                       ["A planet.", "Yes.", "A dog." , "Not a planet."], 2)
 
-question11 = Question("Which item in a room is most affected by light throughout the day?",
+question11 = Question("Which item in a room is most affected by light throughout\nthe day?",
                       ["A clock.", "A curtain.", "The view.", "A plant."], 2)
 
 question12 = Question("If a notebook is left open, what is most likely to happen to it?",
@@ -39,10 +39,10 @@ question12 = Question("If a notebook is left open, what is most likely to happen
 question13 = Question("Which object would require the most maintenance over time?",
                       ["A chair.", "A lamp.", "The air around it.", "A bookshelf."], 2)
 
-question14 = Question("Which of these is most likely to influence the atmosphere of a room?",
+question14 = Question("Which of these is most likely to influence the atmosphere\nof a room?",
                       ["A calendar.", "Shadows on the wall.", "A stapler.", "A clock."], 1)
 
-question15 = Question("If you want to keep track of time accurately, which item would you use?",
+question15 = Question("If you want to keep track of time accurately,\nwhich item would you use?",
                       ["A lamp.", "The rhythm of activity.", "A calendar.", "A notebook."], 2)
 
 question16 = Question("Which object can ‘observe’ changes without moving?",
