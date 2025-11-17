@@ -31,31 +31,31 @@ question10 = Question("What is Pluto?",
                       ["A planet.", "Yes.", "A dog." , "Not a planet."], 2)
 
 question11 = Question("Which item in a room is most affected by light throughout the day?",
-                      ["A clock", "A curtain", "The view", "A plant"], 2)
+                      ["A clock.", "A curtain.", "The view.", "A plant."], 2)
 
 question12 = Question("If a notebook is left open, what is most likely to happen to it?",
-                      ["Pages curl", "Its ideas spread", "It waits silently", "It loses its cover"], 1)
+                      ["Pages curl.", "Its ideas spread.", "It waits silently.", "It loses its cover."], 1)
 
 question13 = Question("Which object would require the most maintenance over time?",
-                      ["A chair", "A lamp", "The air around it", "A bookshelf"], 2)
+                      ["A chair.", "A lamp.", "The air around it.", "A bookshelf."], 2)
 
 question14 = Question("Which of these is most likely to influence the atmosphere of a room?",
-                      ["A calendar", "Shadows on the wall", "A stapler", "A clock"], 1)
+                      ["A calendar.", "Shadows on the wall.", "A stapler.", "A clock."], 1)
 
 question15 = Question("If you want to keep track of time accurately, which item would you use?",
-                      ["A lamp", "The rhythm of activity", "A calendar", "A notebook"], 2)
+                      ["A lamp.", "The rhythm of activity.", "A calendar.", "A notebook."], 2)
 
 question16 = Question("Which object can ‘observe’ changes without moving?",
-                      ["A painting", "The reflection", "A bookshelf", "A chair"], 1)
+                      ["A painting.", "The reflection.", "A bookshelf.", "A chair."], 1)
 
 question17 = Question("If a book is often referenced, what happens to it first?",
-                      ["It forgets nothing", "Its cover wears", "Its spine bends", "Its stories fade"], 0) 
+                      ["It forgets nothing.", "Its cover wears.", "Its spine bends.", "Its stories fade."], 0) 
 
 question18 = Question("Which of these items is most affected by changes in sunlight?",
-                      ["A window", "A rug", "A clock", "The light it reflects"], 3)
+                      ["A window.", "A rug.", "A clock.", "The light it reflects."], 3)
 
 question19 = Question("Which object best shows signs of recent human activity?",
-                      ["Shadows shifting", "A mug", "A notebook", "A chair"], 1)
+                      ["Shadows shifting.", "A mug.", "A notebook.", "A chair."], 1)
 
 question20 = Question("Which of these items is most likely to remain in the same place for years?",
-                      ["Memories it holds", "A painting", "A plant", "A calendar"], 0)  
+                      ["Memories it holds.", "A painting.", "A plant.", "A calendar."], 0)  
