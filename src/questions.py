@@ -48,8 +48,8 @@ question15 = Question("If you want to keep track of time accurately,\nwhich item
 question16 = Question("Which object can ‘observe’ changes without moving?",
                       ["A painting.", "The reflection.", "A bookshelf.", "A chair."], 1)
 
-question17 = Question("If a book is often referenced, what happens to it first?",
-                      ["It forgets nothing.", "Its cover wears.", "Its spine bends.", "Its stories fade."], 0) 
+question17 = Question("What book is refrenced most often?",
+                      ["A Dictionary.", "The Bible.", "Book.", "All of them."], 0) 
 
 question18 = Question("Which of these items is most affected by changes in sunlight?",
                       ["A window.", "A rug.", "A clock.", "The light it reflects."], 3)
@@ -57,5 +57,5 @@ question18 = Question("Which of these items is most affected by changes in sunli
 question19 = Question("Which object best shows signs of recent human activity?",
                       ["Shadows shifting.", "A mug.", "A notebook.", "A chair."], 1)
 
-question20 = Question("Which of these items is most likely to remain in the same place for years?",
+question20 = Question("Which of these items is most likely to remain in the\nsame place for years?",
                       ["Memories it holds.", "A painting.", "A plant.", "A calendar."], 0)  
