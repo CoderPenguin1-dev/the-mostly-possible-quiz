@@ -105,7 +105,7 @@ def game_over() -> None:
     game_over_writer.write("     Game Over!\n\nPress A to restart.\n  Press Q to quit.", font=fonts.gameover)
 
 def game_won() -> None:
-    game_over_writer.write("     You Won!\n\nPress A to restart.\n  Press Q to quit.", font=fonts.gameover)
+    game_over_writer.write("       You Won!\n\nPress A to restart.\n  Press Q to quit.", font=fonts.gameover)
 
 def scroll_banner() -> None:
     global banner_position

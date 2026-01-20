@@ -42,6 +42,8 @@ def draw_game() -> None:
         case GameStates.YOURE_WINNER:
             display.wipe("yellow")
             game_state = GameStates.GAME_WIN_MSG
+        case GameStates.GAME_WIN_MSG:
+            display.game_won()
 
     display.scroll_banner()
 
