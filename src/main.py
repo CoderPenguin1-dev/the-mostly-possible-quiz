@@ -6,10 +6,23 @@ from globals import *
 turtle.setup(800, 800)
 wn = turtle.Screen()
 quit_invoked : bool = False
-
 current_question : int = 0
 
-def draw_game():
+def main() -> None:
+    # Initalize input.
+    wn.onkeypress(answer1_selected, "a") # Option 1.
+    wn.onkeypress(answer2_selected, "b") # Option 2.
+    wn.onkeypress(answer3_selected, "c") # Option 3.
+    wn.onkeypress(answer4_selected, "d") # Option 4.
+    wn.onkeypress(quit_game, "q") # Quit.
+    wn.listen()
+
+    while (not quit_invoked):
+       display.clear()
+       draw_game()
+       turtle.update()
+
+def draw_game() -> None:
     global game_state
     match game_state:
       case GameStates.MAIN_MENU:
@@ -31,50 +44,36 @@ def draw_game():
 
     display.scroll_banner()
 
-def check_answer(answer_index : int):
+def check_answer(answer_index : int) -> None:
    global current_question
    global game_state
    if (game_state == GameStates.QUESTIONS):
-      if (questions[current_question].answer == answer_index):
+      if (QUESTIONS[current_question].answer == answer_index):
          current_question += 1
          game_state = GameStates.CORRECT_ANSWER
       else: game_state = GameStates.GAME_OVER
       
-      if (current_question == question_amount):
+      if (current_question == QUESTION_AMOUNT):
          game_state = GameStates.YOURE_WINNER
    else:
       current_question = 0
       game_state = GameStates.QUESTIONS
 
-def answer1_selected():
+def answer1_selected() -> None:
    check_answer(0)
 
-def answer2_selected():
+def answer2_selected() -> None:
    check_answer(1)
 
-def answer3_selected():
+def answer3_selected() -> None:
    check_answer(2)
 
-def answer4_selected():
+def answer4_selected() -> None:
    check_answer(3)
 
-def quit_game():
+def quit_game() -> None:
    global quit_invoked
    quit_invoked = True
-
-def main():
-    # Initalize input.
-    wn.onkeypress(answer1_selected, "a") # Option 1.
-    wn.onkeypress(answer2_selected, "b") # Option 2.
-    wn.onkeypress(answer3_selected, "c") # Option 3.
-    wn.onkeypress(answer4_selected, "d") # Option 4.
-    wn.onkeypress(quit_game, "q") # Quit.
-    wn.listen()
-
-    while (not quit_invoked):
-       display.clear()
-       draw_game()
-       turtle.update()
 
 if __name__ == "__main__":
     main()
