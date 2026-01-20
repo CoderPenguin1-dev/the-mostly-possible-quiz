@@ -6,3 +6,4 @@ class GameStates(Enum):
     QUESTIONS = 3
     CORRECT_ANSWER = 4
     YOURE_WINNER = 5
+    GAME_WIN_MSG = 6

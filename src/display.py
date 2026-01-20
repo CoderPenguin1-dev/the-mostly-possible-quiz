@@ -78,17 +78,20 @@ def main_menu() -> None:
     main_menu_writer.write("Press A to Start\n           or\n     Q to Quit!", font=fonts.gameover)
 
 def question(question_number : int) -> None:
-  question_writer.write(QUESTIONS[question_number].question, font=fonts.question)
-  answer1_writer.write("A) "+ QUESTIONS[question_number].answers[0], font=fonts.answers)
-  answer2_writer.write("B) "+ QUESTIONS[question_number].answers[1], font=fonts.answers)
-  answer3_writer.write("C) "+ QUESTIONS[question_number].answers[2], font=fonts.answers)
-  answer4_writer.write("D) "+ QUESTIONS[question_number].answers[3], font=fonts.answers)
+    question_writer.write(QUESTIONS[question_number].question, font=fonts.question)
+    answer1_writer.write("A) "+ QUESTIONS[question_number].answers[0], font=fonts.answers)
+    answer2_writer.write("B) "+ QUESTIONS[question_number].answers[1], font=fonts.answers)
+    answer3_writer.write("C) "+ QUESTIONS[question_number].answers[2], font=fonts.answers)
+    answer4_writer.write("D) "+ QUESTIONS[question_number].answers[3], font=fonts.answers)
 
 def question_number(current_question : int) -> None:
     question_number_writer.write(f"#{current_question + 1:02d}", font=fonts.question_number)
 
 def game_over() -> None:
-   game_over_writer.write("     Game Over!\n\nPress A to restart.\n  Press Q to quit.", font=fonts.gameover)
+    game_over_writer.write("     Game Over!\n\nPress A to restart.\n  Press Q to quit.", font=fonts.gameover)
+
+def game_won() -> None:
+    game_over_writer.write("     You Won!\n\nPress A to restart.\n  Press Q to quit.", font=fonts.gameover)
 
 def scroll_banner() -> None:
     global banner_position
