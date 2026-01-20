@@ -30,32 +30,32 @@ quesiton9 = Question("La respuesta es sí.",
 question10 = Question("What is Pluto?",
                       ["A planet.", "Yes.", "A dog." , "Not a planet."], 2)
 
-question11 = Question("Which item in a room is most affected by light throughout\nthe day?",
+question11 = Question("Which item in a room is most affected by light\nthroughout the day?",
                       ["A clock.", "A curtain.", "The view.", "A plant."], 2)
 
-question12 = Question("If a notebook is left open, what is most likely to happen to it?",
+question12 = Question("If a notebook is left open, what is most\nlikely to happen to it?",
                       ["Pages curl.", "Its ideas spread.", "It waits silently.", "It loses its cover."], 1)
 
-question13 = Question("Which object would require the most maintenance over time?",
+question13 = Question("Which object would require the most\nmaintenance over time?",
                       ["A chair.", "A lamp.", "The air around it.", "A bookshelf."], 2)
 
-question14 = Question("Which of these is most likely to influence the atmosphere\nof a room?",
+question14 = Question("Which of these is most likely to influence the\natmosphere of a room?",
                       ["A calendar.", "Shadows on the wall.", "A stapler.", "A clock."], 1)
 
 question15 = Question("If you want to keep track of time accurately,\nwhich item would you use?",
                       ["A lamp.", "The rhythm of activity.", "A calendar.", "A notebook."], 2)
 
-question16 = Question("Which object can ‘observe’ changes without moving?",
+question16 = Question("Which object can ‘observe’ changes without\nmoving?",
                       ["A painting.", "The reflection.", "A bookshelf.", "A chair."], 1)
 
 question17 = Question("What book is refrenced most often?",
                       ["A Dictionary.", "The Bible.", "Book.", "All of them."], 0) 
 
-question18 = Question("Which of these items is most affected by changes in sunlight?",
+question18 = Question("Which of these items is most affected\nby changes in sunlight?",
                       ["A window.", "A rug.", "A clock.", "The light it reflects."], 3)
 
-question19 = Question("Which object best shows signs of recent human activity?",
+question19 = Question("Which object best shows signs of recent\nhuman activity?",
                       ["Shadows shifting.", "A mug.", "A notebook.", "A chair."], 1)
 
-question20 = Question("Which of these items is most likely to remain in the\nsame place for years?",
+question20 = Question("Which of these items is most likely to remain\nin the same place for years?",
                       ["Memories it holds.", "A painting.", "A plant.", "A calendar."], 0)  

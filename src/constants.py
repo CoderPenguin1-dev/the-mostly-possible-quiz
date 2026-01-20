@@ -7,4 +7,4 @@ QUESTION_Y_POS : int = 100
 ANSWER_Y_OFFSET : int = 50
 
 BANNER_Y_POS : int = 330
-BANNER_X_BOUND : int = 800
+BANNER_X_BOUND : int = 1200

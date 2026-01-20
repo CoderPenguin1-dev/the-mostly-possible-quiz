@@ -6,73 +6,87 @@ from time import sleep
 
 turtle.tracer(0)
 
-#region Turtle Definitions
+#
+#   Turtle Definitions
+#
 
-# Question Text
+#region Question Text
 question_writer = turtle.Turtle()
 question_writer.hideturtle()
 question_writer.penup()
 question_writer.goto(constants.QUESTION_X_POS, constants.QUESTION_Y_POS)
+#endregion
 
-# Answer Text
+#region Answer 1 Text
 answer1_writer = turtle.Turtle()
 answer1_writer.hideturtle()
 answer1_writer.penup()
 answer1_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET)
 answer1_writer.pencolor("red")
+#endregion
 
+#region Answer 2 Text
 answer2_writer = turtle.Turtle()
 answer2_writer.hideturtle()
 answer2_writer.penup()
 answer2_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET * 2)
 answer2_writer.pencolor("blue")
+#endregion
 
+#region Answer 3 Text
 answer3_writer = turtle.Turtle()
 answer3_writer.hideturtle()
 answer3_writer.penup()
 answer3_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET * 3)
 answer3_writer.pencolor("green")
+#endregion
 
+#region Answer 4 Text
 answer4_writer = turtle.Turtle()
 answer4_writer.hideturtle()
 answer4_writer.penup()
 answer4_writer.goto(constants.QUESTION_X_POS + 20, constants.QUESTION_Y_POS - constants.ANSWER_Y_OFFSET * 4)
 answer4_writer.pencolor("orange")
+#endregion
 
-# Game Over Text
+#region Game Over Text
 game_over_writer = turtle.Turtle()
 game_over_writer.penup()
 game_over_writer.hideturtle()
 game_over_writer.pencolor("red")
-game_over_writer.goto(-280, -20)
+game_over_writer.goto(-360, -80)
+#endregion
 
-# Wipe Screen
+#region Wipe Screen
 wipe_drawer = turtle.Turtle()
 wipe_drawer.hideturtle()
 wipe_drawer.pensize(constants.WIPE_SPEED)
 wipe_drawer.pencolor("red")
+#endregion
 
-# Scrolling Banner
+#region Scrolling Banner
 banner_position : float = -constants.BANNER_X_BOUND
 banner_writer = turtle.Turtle()
 banner_writer.hideturtle()
 banner_writer.penup()
 banner_writer.pencolor("green")
 banner_writer.goto(banner_position, constants.BANNER_Y_POS)
+#endregion
 
-# Question Number
+#region Question Number
 question_number_writer = turtle.Turtle()
 question_number_writer.hideturtle()
 question_number_writer.penup()
 question_number_writer.goto(250, -350)
+#endregion
 
-# Main Menu
+#region Main Menu
 main_menu_writer = turtle.Turtle()
 main_menu_writer.hideturtle()
 main_menu_writer.penup()
-main_menu_writer.goto(-240, -50)
-
+main_menu_writer.goto(-300, -50)
 #endregion
+
 
 def main_menu() -> None:
     main_menu_writer.write("Press A to Start\n           or\n     Q to Quit!", font=fonts.gameover)
