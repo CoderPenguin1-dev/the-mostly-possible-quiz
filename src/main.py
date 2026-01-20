@@ -51,7 +51,7 @@ def check_answer(answer_index : int) -> None:
     global current_question
     global game_state
     if (game_state == GameStates.QUESTIONS):
-        if (QUESTIONS[current_question].answer == answer_index):
+        if (QUESTIONS[current_question].answer.value == answer_index):
             current_question += 1
             game_state = GameStates.CORRECT_ANSWER
         else: game_state = GameStates.GAME_OVER
