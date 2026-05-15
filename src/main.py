@@ -47,11 +47,11 @@ def draw_game() -> None:
 
     display.scroll_banner()
 
-def check_answer(answer_index : int) -> None:
+def check_answer(answer_index : Answer) -> None:
     global current_question
     global game_state
     if (game_state == GameStates.QUESTIONS):
-        if (QUESTIONS[current_question].answer.value == answer_index):
+        if (QUESTIONS[current_question].answer == answer_index):
             current_question += 1
             game_state = GameStates.CORRECT_ANSWER
         else: game_state = GameStates.GAME_OVER
@@ -63,16 +63,16 @@ def check_answer(answer_index : int) -> None:
         game_state = GameStates.QUESTIONS
 
 def answer1_selected() -> None:
-    check_answer(0)
+    check_answer(Answer.A)
 
 def answer2_selected() -> None:
-    check_answer(1)
+    check_answer(Answer.B)
 
 def answer3_selected() -> None:
-    check_answer(2)
+    check_answer(Answer.C)
 
 def answer4_selected() -> None:
-    check_answer(3)
+    check_answer(Answer.D)
 
 def quit_game() -> None:
     global quit_invoked
